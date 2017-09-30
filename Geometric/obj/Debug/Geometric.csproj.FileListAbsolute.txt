@@ -1,0 +1,6 @@
+C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\bin\Debug\Geometric.exe.config
+C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\bin\Debug\Geometric.exe
+C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\bin\Debug\Geometric.pdb
+C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\obj\Debug\Geometric.csprojResolveAssemblyReference.cache
+C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\obj\Debug\Geometric.exe
+C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\obj\Debug\Geometric.pdb
