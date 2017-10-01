@@ -198,8 +198,48 @@ namespace Geometric
         }
     }
 
+    /// <summary>
+    /// Ромб задаваемый центром и длинами вертикальной и горизонтальной диагоналями
+    /// </summary>
     struct Rhomb
     {
+        public Point centralPoint;
+        public Line verticalHalfDiagonal;
+        public Line horizontalHalfDiagonal;
+        
+        public Rhomb(Point centralPoint, int verticalDiagonal, int horizontalDiagonal)
+        {
+            this.centralPoint = centralPoint;
+            this.verticalHalfDiagonal = new Line(centralPoint, new Point(centralPoint.x, centralPoint.y + (verticalDiagonal/2)));
+            this.horizontalHalfDiagonal = new Line(centralPoint, new Point(centralPoint.x + (horizontalDiagonal/2), centralPoint.y));
+        }
 
+        public double square()
+        {
+            return 2 * verticalHalfDiagonal.lenght() * horizontalHalfDiagonal.lenght();
+        }
+
+        public double perimeter()
+        {
+            return 4*Math.Sqrt(Math.Pow(verticalHalfDiagonal.lenght(), 2) + Math.Pow(horizontalHalfDiagonal.lenght(), 2));
+        }
+
+        /// <summary>
+        /// Принадлежит ли точка Ромбу
+        /// </summary>
+        /// <param name="point">Исследуемая точка</param>
+        /// <returns>true-если принадлежит, false-если не принадлежит</returns>
+        public bool isPointInRhomb(Point point)
+        {
+             if((Math.Abs(point.x - centralPoint.x)/horizontalHalfDiagonal.lenght())
+                + (Math.Abs(point.y - centralPoint.y) / verticalHalfDiagonal.lenght()) <= 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 } 
