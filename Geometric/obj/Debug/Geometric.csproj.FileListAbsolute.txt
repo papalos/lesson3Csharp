@@ -4,3 +4,9 @@ C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\bin\
 C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\obj\Debug\Geometric.csprojResolveAssemblyReference.cache
 C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\obj\Debug\Geometric.exe
 C:\Users\Сепа\Documents\Visual Studio 2015\Projects\Geometric\Geometric\obj\Debug\Geometric.pdb
+C:\Users\sergey\Documents\Visual Studio 2017\Projects\geo\lesson3Csharp\Geometric\bin\Debug\Geometric.exe.config
+C:\Users\sergey\Documents\Visual Studio 2017\Projects\geo\lesson3Csharp\Geometric\bin\Debug\Geometric.exe
+C:\Users\sergey\Documents\Visual Studio 2017\Projects\geo\lesson3Csharp\Geometric\bin\Debug\Geometric.pdb
+C:\Users\sergey\Documents\Visual Studio 2017\Projects\geo\lesson3Csharp\Geometric\obj\Debug\Geometric.csprojResolveAssemblyReference.cache
+C:\Users\sergey\Documents\Visual Studio 2017\Projects\geo\lesson3Csharp\Geometric\obj\Debug\Geometric.exe
+C:\Users\sergey\Documents\Visual Studio 2017\Projects\geo\lesson3Csharp\Geometric\obj\Debug\Geometric.pdb

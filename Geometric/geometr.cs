@@ -47,7 +47,7 @@ namespace Geometric
         /// </summary>
         public double lenght()
         {
-            return Math.Sqrt(Math.Pow((pointEnd.x - pointStart.x),2) + Math.Pow((pointEnd.y - pointStart.y),2));
+            return Math.Sqrt(Math.Pow((pointEnd.x - pointStart.x), 2) + Math.Pow((pointEnd.y - pointStart.y), 2));
         }
 
         /// <summary>
@@ -66,47 +66,140 @@ namespace Geometric
                 return false;
             }
         }
+    }
 
-        /// <summary>
-        /// Квадрат задаваемый верхним левым углом и длиной сторон
-        /// </summary>
-        struct Square
+    /// <summary>
+    /// Квадрат задаваемый верхним левым углом и длиной сторон
+    /// </summary>
+    struct Square
+    {
+        Point startSquarePoint;
+        Line lenghtSide;
+
+        public Square(Point leftTopAngle, int side)
         {
-            Point startSquarePoint;
-            int lenghtSide;
+            startSquarePoint = leftTopAngle;
+            lenghtSide = new Line(leftTopAngle, new Point(leftTopAngle.x + side, leftTopAngle.y));
+        }
 
-            public Square(Point leftTopAngle, int side)
+        public double square()
+        {
+            return lenghtSide.lenght() * lenghtSide.lenght();
+        }
+
+        public double perimeter()
+        {
+            return 4 * lenghtSide.lenght();
+        }
+        
+        /// <summary>
+        /// Проверяет принадлежность точки к квадрату
+        /// </summary>
+        /// <param name="point">исследуемая точка</param>
+        /// <returns>true-если принадлежит, false-если не принадлежит</returns>
+        public bool isPointInSquare(Point point)
+        {
+            if ((point.x>=startSquarePoint.x & point.x <= (startSquarePoint.x + lenghtSide.lenght())) 
+                & (point.y<=startSquarePoint.y&point.y>=(startSquarePoint.y-lenghtSide.lenght())))
             {
-                startSquarePoint = leftTopAngle;
-                lenghtSide = side;
+                return true;
             }
-
-            public double square()
+            else
             {
-                return lenghtSide * lenghtSide;
-            }
-
-            public double perimeter()
-            {
-                return 4 * lenghtSide;
-            }
-
-            /// <summary>
-            /// Проверяет принадлежность точки к квадрату
-            /// </summary>
-            /// <param name="point">исследуемая точка</param>
-            /// <returns>true-если принадлежит, false-если не принадлежит</returns>
-            public bool isPointInSquare(Point point)
-            {
-                if ((point.x>=startSquarePoint.x & point.x <= (startSquarePoint.x + lenghtSide)) & (point.y<=startSquarePoint.y&point.y>=(startSquarePoint.y-lenghtSide)))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
         }
     }
-}
+
+    /// <summary>
+    /// Круг задаваемый начальной точкой и длиной радиуса
+    /// </summary>
+    struct Circle
+    {
+        public Point center;
+        public Line radius;
+
+        public Circle(Point center, int lenghtRadius)
+        {
+            this.center = center;
+            this.radius = new Line(center, new Point (center.x+lenghtRadius, center.y));
+        }
+
+        /// <summary>
+        /// Проверяет вхождение точки в круг
+        /// </summary>
+        /// <param name="point">проверяемая точка</param>
+        /// <returns>возвращает истину или ложь</returns>
+        public bool isPointInCircle(Point point)
+        {
+            if (Math.Sqrt(Math.Pow(center.x-point.x,2)+Math.Pow(center.y-point.y,2))<=radius.lenght())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public double circumference()
+        {
+            return 2 * Math.PI * radius.lenght();
+        }
+
+        public double square()
+        {
+            return (radius.lenght() * circumference()) / 2;
+        }
+    }
+
+    /// <summary>
+    /// Прямоугольник задаваемый верхним левым углом и длиной сторон
+    /// </summary>
+    struct Rectangle
+    {
+        Point leftTopAngle;
+        Line width;
+        Line lenght;
+
+        public Rectangle(Point leftTopAngle, int width, int lenght)
+        {
+            this.leftTopAngle = leftTopAngle;
+            this.width = new Line(leftTopAngle, new Point(leftTopAngle.x, leftTopAngle.y+ width));
+            this.lenght = new Line(leftTopAngle, new Point(leftTopAngle.x+ width, leftTopAngle.y));
+        }
+
+        public double square()
+        {
+            return width.lenght() * lenght.lenght();
+        }
+
+        public double perimeter()
+        {
+            return 2 * width.lenght() + 2 * lenght.lenght();
+        }
+
+        /// <summary>
+        /// Проверяет принадлежность точки к прямоугольнику
+        /// </summary>
+        /// <param name="point">исследуемая точка</param>
+        /// <returns>true-если принадлежит, false-если не принадлежит</returns>
+        public bool isPointInSquare(Point point)
+        {
+            if ((point.x >= leftTopAngle.x & point.x <= (leftTopAngle.x + lenght.lenght()))
+                & (point.y <= leftTopAngle.y & point.y >= (leftTopAngle.y - lenght.lenght())))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    struct Rhomb
+    {
+
+    }
+} 
